@@ -144,7 +144,7 @@ urlsafe_base64(){
 ss_link_qr(){
 	SSbase64=$(urlsafe_base64 "${method}:${password}@${ip}:${port}")
 	SSurl="ss://${SSbase64}"
-	SSQRcode="https://vien.tech/qrcode?base64=${SSurl}"
+	SSQRcode="https://viencoding.com/qrcode?base64=${SSurl}"
 	ss_link=" SS    链接 : ${Green_font_prefix}${SSurl}${Font_color_suffix} \n SS  二维码 : ${Green_font_prefix}${SSQRcode}${Font_color_suffix}"
 }
 ssr_link_qr(){
@@ -153,7 +153,7 @@ ssr_link_qr(){
 	SSRPWDbase64=$(urlsafe_base64 "${password}")
 	SSRbase64=$(urlsafe_base64 "${ip}:${port}:${SSRprotocol}:${method}:${SSRobfs}:${SSRPWDbase64}")
 	SSRurl="ssr://${SSRbase64}"
-	SSRQRcode="https://vien.tech/qrcode?base64=${SSRurl}"
+	SSRQRcode="https://viencoding.com/qrcode?base64=${SSRurl}"
 	ssr_link=" SSR   链接 : ${Red_font_prefix}${SSRurl}${Font_color_suffix} \n SSR 二维码 : ${Red_font_prefix}${SSRQRcode}${Font_color_suffix} \n "
 }
 ss_ssr_determine(){
@@ -212,7 +212,7 @@ View_User(){
 		echo -e " ${Green_font_prefix} 提示: ${Font_color_suffix}
 在浏览器中，打开二维码链接，就可以看到二维码图片。
 协议和混淆后面的[ _compatible ]，指的是 兼容原版协议/混淆。
-接下来客户端下载和配置请参考：https://vien.tech/article/122"
+接下来客户端下载和配置请参考：https://viencoding.com/article/122"
 		echo && echo "==================================================="
 	else
 		user_total=`${jq_file} '.port_password' ${config_user_file} | sed '$d' | sed "1d" | wc -l`
@@ -240,13 +240,13 @@ View_User(){
 		echo -e " ${Green_font_prefix} 提示: ${Font_color_suffix}
 在浏览器中，打开二维码链接，就可以看到二维码图片。
 协议和混淆后面的[ _compatible ]，指的是 兼容原版协议/混淆。
-接下来客户端下载和配置请参考：https://vien.tech/article/122"
+接下来客户端下载和配置请参考：https://viencoding.com/article/122"
 		echo && echo "==================================================="
 	fi
-	echo -e "vultr限时注册送50刀：https://vien.tech/article/114"
-	echo -e "outline搭建vpn教程：https://vien.tech/article/93"
-	echo -e "更多文章：https://vien.tech"
-	echo -e "进入 https://vien.tech ，动动手指点个广告，举手之劳，博主就能吃上辣条！"
+	echo -e "vultr限时注册送50刀：https://viencoding.com/article/114"
+	echo -e "outline搭建vpn教程：https://viencoding.com/article/93"
+	echo -e "更多文章：https://viencoding.com"
+	echo -e "进入 https://viencoding.com ，动动手指点个广告，举手之劳，博主就能吃上辣条！"
 	echo "==================================================="
 }
 # 设置 配置信息
@@ -271,8 +271,8 @@ Set_config_port(){
 }
 Set_config_password(){
 	echo "请输入要设置的ShadowsocksR账号 密码"
-	read -e -p "(默认: vien.tech):" ssr_password
-	[[ -z "${ssr_password}" ]] && ssr_password="vien.tech"
+	read -e -p "(默认: viencoding.com):" ssr_password
+	[[ -z "${ssr_password}" ]] && ssr_password="viencoding.com"
 	echo && echo ${Separator_1} && echo -e "	密码 : ${Green_font_prefix}${ssr_password}${Font_color_suffix}" && echo ${Separator_1} && echo
 }
 Set_config_method(){
